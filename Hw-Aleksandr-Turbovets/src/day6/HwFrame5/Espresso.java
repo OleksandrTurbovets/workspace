@@ -1,7 +1,8 @@
 package day6.HwFrame5;
 
 public class Espresso extends Goods{
-	
+
+
 	public Espresso(){
 		super("Espresso", "Water, coffe", 20);
 	}
