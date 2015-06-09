@@ -7,7 +7,8 @@ public class MenuLancher {
 		goods[0] = new Espresso("Espresso", "Water, coffe", 20);
 		goods[1] = new Espresso();
 		goods[2] = new Espresso(1);
-		
+		goods[3] = new Espresso("Amerucano", "Water, Water, coffe", 25);
+
 		System.out.println("Name		" + "Ingredients		" + "	Price");
 		for (Goods g : goods){
 			if (g != null){
