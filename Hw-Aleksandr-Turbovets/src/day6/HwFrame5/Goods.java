@@ -7,6 +7,7 @@ public abstract class Goods implements Suger{
 	private double price;
 	
 	public Goods(int pieces){
+
 	}
 
 	public Goods(String name, String ingredients, double price){
