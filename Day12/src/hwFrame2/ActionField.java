@@ -82,7 +82,7 @@ public class ActionField extends JPanel {
 
         sPanel.add(btnTiger);
         sPanel.add(btnBt7);
-        sPanel.add(btnRePlay);
+//        sPanel.add(btnRePlay);
 
         btnTiger.addActionListener(new ActionListener() {
             @Override
@@ -124,7 +124,7 @@ public class ActionField extends JPanel {
 
         JFormattedTextField total = new JFormattedTextField();
         total.setColumns(15);
-        total.setValue("Aggressor wins! Total: " + T34Killed);
+        total.setValue("Game over: " + T34Killed);
         goPanel.add(total);
 
         JButton btnRestart = new JButton("Try Again");
@@ -301,7 +301,7 @@ public class ActionField extends JPanel {
 
         battleField = new BattleField();
         defender = new T34(battleField);
-        if (aggressor  instanceof Tiger){
+        if (aggressor instanceof Tiger) {
             aggressor = new Tiger(battleField, 448, 64, Direction.DOWN);
         } else {
             aggressor = new Bt7(battleField, 448, 64, Direction.DOWN);
@@ -311,11 +311,10 @@ public class ActionField extends JPanel {
         showGameOverPanel();
 
 
-        while(canStart){
+        while (canStart) {
             System.out.println("Game over, try again!");
             Thread.sleep(2000);
         }
-
 
 
         runTheGame();
@@ -383,7 +382,8 @@ public class ActionField extends JPanel {
                     }
                     ISimpleBFObject bfObject = battleField.scanQuadrant(v, h);
                     if (!(bfObject instanceof Blank) && !bfObject.isDestroyed() && !(bfObject instanceof Water)) {
-                        System.out.println("[illegal move] direction: " + direction + " tankX: " + tank.getX() + ", tankY: " + tank.getY());
+                        System.out.println("[illegal move] direction: " + direction + " tankX: " + tank.getX() +
+                                ", tankY: " + tank.getY());
 
                         return;
                     }
@@ -442,6 +442,7 @@ public class ActionField extends JPanel {
                 for (int i = bullets.size() - 1; i < bullets.size(); i++) {
 
                     final int finalI = i;
+
                     new Thread(new Runnable() {
                         @Override
                         public synchronized void run() {
@@ -491,7 +492,6 @@ public class ActionField extends JPanel {
     private boolean processInterception(Bullet bullet, Tank tank) {
 
         if (bullet.getX() > 576 || bullet.getX() < 0 || bullet.getY() > 576 || bullet.getY() < 0) {
-//            bullet.destroy();
             return true;
         }
 
