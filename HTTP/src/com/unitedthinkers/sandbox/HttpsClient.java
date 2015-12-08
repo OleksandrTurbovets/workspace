@@ -10,7 +10,6 @@ import java.net.URL;
 public class HttpsClient {
 
     public HttpsClient(){
-
     }
 
     public String getContentOfTheUrl(String httpsUrl){

@@ -304,4 +304,5 @@ public class HostTests {
 
         assertTrue("The CSC Response Code should be S instead of " + fieldResponse, fieldResponse.equals("S"));
     }
+
 }
